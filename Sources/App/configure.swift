@@ -31,5 +31,6 @@ public func configure(
     // magration
     var migrations = MigrationConfig()
     migrations.add(model: User.self, database: .psql)
+    migrations.add(model: Coordinate.self, database: .psql)
     services.register(migrations)
 }

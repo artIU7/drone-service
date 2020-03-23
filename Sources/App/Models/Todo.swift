@@ -20,18 +20,22 @@ final class User: PostgreSQLModel {
  //       let lon, lat: String
  //   }
 }
-/*final class Coordinate: PostgreSQLModel,Codable {
+final class Coordinate: PostgreSQLModel {
     var id: Int?
     
-     let lon, lat: String
+    let lon, lat: Double
 
-       init(lon: String, lat: String) {
-           self.lon = lon
-           self.lat = lat
-       }
-} */
+    init(lon: Double, lat: Double) {
+        self.lon = lon
+        self.lat = lat
+    }
+}
 
 
 extension User: Content {}
 extension User: Migration {}
 extension User: Parameter {}
+
+extension Coordinate: Content {}
+extension Coordinate: Migration {}
+extension Coordinate: Parameter {}

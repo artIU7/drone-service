@@ -30,3 +30,16 @@ final class UserController {
         }.transform(to: .ok)
     }
 }
+
+final class CoordinateController {
+    // view with users
+    func list(_ req: Request) throws -> Future<[Coordinate]> {
+        return Coordinate.query(on: req).all()
+    }
+    // create a new user
+    func create(_ req: Request) throws -> Future<Coordinate> {
+        return try req.content.decode(Coordinate.self).flatMap { coordinate in
+            return coordinate.save(on: req)
+        }
+    }
+}

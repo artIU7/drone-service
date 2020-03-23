@@ -8,4 +8,8 @@ public func routes(_ router: Router) throws {
     router.post("users", use: userController.create)
     router.patch("users", User.parameter, use: userController.update)
     router.delete("users", User.parameter, use: userController.delete)
+    //
+    let coordinateController = CoordinateController()
+    router.get("location", use: coordinateController.list)
+    router.post("location", use: coordinateController.create)
 }
