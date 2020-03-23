@@ -13,7 +13,9 @@ final class User: PostgreSQLModel,Codable {
         self.mycoordinate = mycoordinate
     }
 }
-final class Coordinate:Codable {
+final class Coordinate: PostgreSQLModel,Codable {
+    var id: Int?
+    
      let lon, lat: String
 
        init(lon: String, lat: String) {
