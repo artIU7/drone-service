@@ -1,23 +1,33 @@
 import Vapor
 
-/// Controls basic CRUD operations on `Todo`s.
-final class TodoController {
-    /// Returns a list of all `Todo`s.
-    func index(_ req: Request) throws -> Future<[Todo]> {
-        return Todo.query(on: req).all()
+final class UserController {
+
+    // view with users
+    func list(_ req: Request) throws -> Future<[User]> {
+        return User.query(on: req).all()
     }
 
-    /// Saves a decoded `Todo` to the database.
-    func create(_ req: Request) throws -> Future<Todo> {
-        return try req.content.decode(Todo.self).flatMap { todo in
-            return todo.save(on: req)
+    // create a new user
+    func create(_ req: Request) throws -> Future<User> {
+        return try req.content.decode(User.self).flatMap { user in
+            return user.save(on: req)
         }
     }
 
-    /// Deletes a parameterized `Todo`.
+    // update a user
+    func update(_ req: Request) throws -> Future<User> {
+        return try req.parameters.next(User.self).flatMap { user in
+            return try req.content.decode(User.self).flatMap { newUser in
+                user.username = newUser.username
+                return user.save(on: req)
+            }
+        }
+    }
+
+    // delete a user
     func delete(_ req: Request) throws -> Future<HTTPStatus> {
-        return try req.parameters.next(Todo.self).flatMap { todo in
-            return todo.delete(on: req)
+        return try req.parameters.next(User.self).flatMap { user in
+            return user.delete(on: req)
         }.transform(to: .ok)
     }
 }
