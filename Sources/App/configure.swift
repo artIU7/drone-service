@@ -10,12 +10,18 @@ public func configure(
 ) throws {
 
     /// Register routes to the router
+    try services.register(FluentPostgreSQLProvider())
     let router = EngineRouter.default()
     try routes(router)
     services.register(router, as: Router.self)
-    try services.register(FluentPostgreSQLProvider())
     // Configure a PostgreSQL database
-    let postgreSQLConfig = PostgreSQLDatabaseConfig(hostname: "localhost", username: "brazil")
+    let postgreSQLConfig : PostgreSQLDatabaseConfig
+    if let url = Environment.get("DATABASE_URL") {
+        postgreSQLConfig = PostgreSQLDatabaseConfig(url: url)!
+    } else {
+        postgreSQLConfig = PostgreSQLDatabaseConfig(hostname: "localhost", username: "brazil")
+    }
+    
     let postgreSQL = PostgreSQLDatabase(config: postgreSQLConfig)
 
     // Register the configured PostreSQL database to the database config.
