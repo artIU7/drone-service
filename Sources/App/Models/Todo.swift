@@ -2,18 +2,21 @@ import FluentPostgreSQL
 import Vapor
 
 
-final class User: PostgreSQLModel/*,Codable*/ {
+final class User: PostgreSQLModel {
     var id: Int?
     var username: String
-    var altitude : Double
-    //var mycoordinate : Coordinate
+ //   var altitude : Double
+   // var mycoordinate : Coordinate
 
-    init(id: Int? = nil, username: String,altitude : Double/*, mycoordinate : Coordinate*/ ) {
+    init(id: Int? = nil, username: String/*,altitude : Double*//*,mycoordinate : Coordinate */) {
         self.id = id
         self.username = username
-        self.altitude = altitude
+    //    self.altitude = altitude
         //self.mycoordinate = mycoordinate
     }
+ //   struct Coordinate {
+ //       let lon, lat: String
+ //   }
 }
 /*final class Coordinate: PostgreSQLModel,Codable {
     var id: Int?
