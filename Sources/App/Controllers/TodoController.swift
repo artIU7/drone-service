@@ -17,7 +17,7 @@ final class UserController {
     func update(_ req: Request) throws -> Future<User> {
         return try req.parameters.next(User.self).flatMap { user in
             return try req.content.decode(User.self).flatMap { newUser in
-                user.username = newUser.username
+                user.altitude = newUser.altitude
                 return user.save(on: req)
             }
         }
