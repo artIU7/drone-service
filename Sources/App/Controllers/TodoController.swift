@@ -5,7 +5,7 @@ final class UserController {
     // view with users
     func list(_ req: Request) throws -> Future<[User]> {
         return User.query(on: req).all()
-        
+        // comment 
     }
     // create a new user
     func create(_ req: Request) throws -> Future<User> {
