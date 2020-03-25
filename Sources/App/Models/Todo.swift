@@ -6,14 +6,16 @@ final class User: PostgreSQLModel {
     var id: Int?
  //   var username: String
     var altitude : Double
-     var username: String
+    var username : String
+    var position : Int
    // var mycoordinate : Coordinate
 
-    init(id: Int? = nil, /*username: String*/altitude : Double,username: String/*,mycoordinate : Coordinate */) {
+    init(id: Int? = nil, /*username: String*/altitude : Double,username: String/*,mycoordinate : Coordinate */,position : Int) {
         self.id = id
    //     self.username = username
         self.altitude = altitude
-         self.username = username
+        self.username = username
+        self.position = position
         //self.mycoordinate = mycoordinate
     }
  //   struct Coordinate {
