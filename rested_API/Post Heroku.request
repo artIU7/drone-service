@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>baseURL</key>
-	<string>https://droneservice.herokuapp.com/location/</string>
+	<string>https://droneservice.herokuapp.com/users/</string>
 	<key>followRedirect</key>
 	<true/>
 	<key>handleJSONPCallbacks</key>
@@ -61,11 +61,27 @@
 		</dict>
 		<dict>
 			<key>inUse</key>
-			<false/>
+			<true/>
 			<key>parameter</key>
 			<string>altitude</string>
 			<key>value</key>
 			<string>45</string>
+		</dict>
+		<dict>
+			<key>inUse</key>
+			<true/>
+			<key>parameter</key>
+			<string>username</string>
+			<key>value</key>
+			<string>valet</string>
+		</dict>
+		<dict>
+			<key>inUse</key>
+			<true/>
+			<key>parameter</key>
+			<string>position</string>
+			<key>value</key>
+			<string>1</string>
 		</dict>
 	</array>
 	<key>parametersType</key>

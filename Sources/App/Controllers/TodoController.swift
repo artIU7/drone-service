@@ -4,8 +4,17 @@ final class UserController {
 
     // view with users
     func list(_ req: Request) throws -> Future<[User]> {
-        return User.query(on: req).all()
-        // comment 
+            return User.query(on: req).all()
+       
+        /*let joinData = req.withPooledConnection(to: .psql) { (conn) -> Future<[User]> in
+            conn.raw("SELECT DISTINCT ON(<my columns>) * FROM <my_table> INNER JOIN <another_table> ON <some_condition> WHERE <conditions>")
+                .all(decoding: User.self) 
+        }*/
+            //.join(\User.position, to: \Coordinate.id)
+        
+        //.all()
+        
+        // comment
     }
     // create a new user
     func create(_ req: Request) throws -> Future<User> {
