@@ -71,7 +71,7 @@ var user: Parent<User, Coordinate> {
     }
 }
 extension Coordinate {
-  var users: Children<Coordinate, User> {
+  var coordinate: Children<Coordinate, User> {
     return children(\.positionID)
   }
 }
