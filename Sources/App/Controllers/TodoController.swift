@@ -47,6 +47,20 @@ final class UserController {
         
         // comment
     }
+    func list2(_ req: Request) throws -> Future<[User]> {
+               let users =  User.query(on: req)
+                .join(\Coordinate.id,to: \User.positionID)
+                //.alsoDecode(User.self)
+                .all()
+        print(users)
+        return users
+    }
+    func list3(_ req: Request) throws -> Future<[User]> {
+                return User.query(on: req)
+                 .join(\User.positionID,to: \Coordinate.id )
+                 //.alsoDecode(User.self)
+                 .all()
+     }
     // create a new user
     func create(_ req: Request) throws -> Future<User> {
         return try req.content.decode(User.self).flatMap { user in
