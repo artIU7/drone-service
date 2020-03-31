@@ -27,7 +27,7 @@ final class UserController {
     // view with users
     func list(_ req: Request) throws -> Future<[User]> {
             return User.query(on: req)
-             //.join(\User.positionID,to: \Coordinate.id)
+             .join(\User.positionID,to: \Coordinate.id)
              .filter(\User.positionID >= 2)
              .all()
         //let booking = Booking.query(on: req).join(\Booking.product, to:\Product.id).filter(\.user_id == userID).all()
