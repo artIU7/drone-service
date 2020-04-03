@@ -64,10 +64,6 @@
     map.addEventListener('tap', function(evt) {
     // Log 'tap' and 'mouse' events:
     console.log(evt.type, evt.currentPointer.type);
-    console.log(#(userlist.last.username));
-    console.log(#(userlist);
-    console.log(#(userlist.last));
-    console.log(#(userlist.username));
     });
 
     // Instantiate the default behavior, providing the mapEvents object:

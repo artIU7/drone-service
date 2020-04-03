@@ -1,9 +1,20 @@
 alert("Hello, alert!");
-const Http = new XMLHttpRequest();
-const url='https://jsonplaceholder.typicode.com/posts';
-Http.open("GET", url);
-Http.send();
 
-Http.onreadystatechange = (e) => {
-  console.log(Http.responseText)
-}
+
+let user = {
+    altitude: 43,
+    username: 'Smith',
+    positionID: 1
+  };
+  
+  let response = await fetch('https://droneservice.herokuapp.com/users/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    },
+    body: JSON.stringify(user)
+  });
+  
+  let result = await response.json();
+  alert(result.message);
+  console.log(JSON.parse(JSON.stringify(user)));
