@@ -4,6 +4,7 @@ import Vapor
 public func routes(_ router: Router) throws {
 
     let userController = UserController()
+    router.get("frontview",use: userController.viewFront)
     router.get("users", use: userController.list)
     router.get("users1", use: userController.list1)
     router.get("users2",use: userController.list2)
