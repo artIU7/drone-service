@@ -65,7 +65,7 @@
     // Instantiate the default behavior, providing the mapEvents object:
     var behavior = new H.mapevents.Behavior(mapEvents);
     //  Add Marker
-    var svgMarkup = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" ' + 
+    var svgMarkup1 = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" ' + 
     'y="0px" style="margin:-112px 0 0 -32px" width="136px"' + 
     'height="150px" viewBox="0 0 136 150"><ellipse fill="#000" ' +
     'cx="32" cy="128" rx="36" ry="4"><animate attributeName="cx" ' + 
@@ -88,7 +88,7 @@
     'keyTimes="0;0.4;1" calcMode="spline" ' +
     'repeatCount="indefinite"/></ellipse></svg>'
     // svg to icon
-    var icon = new H.map.DomIcon(svgMarkup),
+    var icon = new H.map.DomIcon(svgMarkup1),
     coords = {lat: 55.791105, lng: 38.438457},
     marker = new H.map.DomMarker(coords, {icon: icon});
     // add object to map
