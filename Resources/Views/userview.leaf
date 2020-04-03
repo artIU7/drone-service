@@ -13,7 +13,7 @@
             type="text/javascript" charset="utf-8"></script>
     </head>
     <body class="container">
-        <h1 class="mt-3"> Dashboard service from brazil@ </h1>
+        <h1 class="mt-3"> Dashboard service from brazil@ #(user.last.username) </h1>
         <form method="POST" action="/users">
             <div class="input-group">
                 <input type="double" name="altitude" class="form-control">
@@ -26,12 +26,12 @@
                 </div>
             </div>
         </form>
-        #for(user in userlist) {
+     <!-- #for(user in userlist) {
             <p class="mb-0">
                 #(user.altitude)
                 #(user.username)
             </p>
-        }
+        } --> 
     <script src="/scripts/app.js"></script>    
     <div style="width: 800px; height: 400px" id="mapContainer"></div>
     <script id="example-code" data-categories="geoshape" type="text/javascript" >
