@@ -3,7 +3,6 @@
     <head>
         <title>Model</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <link rel="icon" href="http://here.com/favicon.ico"/>
         <meta name="viewport" content="initial-scale=1.0,width=device-width" />
         <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
             type="text/javascript" charset="utf-8"></script>
@@ -65,6 +64,8 @@
     map.addEventListener('tap', function(evt) {
     // Log 'tap' and 'mouse' events:
     console.log(evt.type, evt.currentPointer.type);
+    console.log(userlist.last.username);
+    console.log(locations)
     });
 
     // Instantiate the default behavior, providing the mapEvents object:
@@ -91,7 +92,7 @@
     '<animate attributeName="ry" from="16" to="16" begin="0s" ' + 
     'dur="1.5s" values="16;12;16" keySplines=".6 .0 .8 .0; .0 .8 .0 1" ' +
     'keyTimes="0;0.4;1" calcMode="spline" ' +
-    'repeatCount="indefinite"/></ellipse></svg>'
+    'repeatCount="indefinite"/></ellipse></svg>';
     // svg to icon
     var icon = new H.map.Icon(svgMarkupPosition),
     coords = {lat: 55.791105, lng: 38.438457},

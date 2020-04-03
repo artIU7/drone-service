@@ -86,8 +86,11 @@ final class UserController {
 
 final class CoordinateController {
     // view with users
-    func list(_ req: Request) throws -> Future<[Coordinate]> {
-        return Coordinate.query(on: req).all()
+    func list(_ req: Request) throws -> Future<View> {
+        return Coordinate.query(on: req).all().flatMap { users in
+            let data = ["locations": users]
+            return try req.view().render("userview", data)
+        }
     }
     // create a new user
     func create(_ req: Request) throws -> Future<Coordinate> {
