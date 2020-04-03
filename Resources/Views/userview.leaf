@@ -86,11 +86,10 @@
     'keyTimes="0;0.4;1" calcMode="spline" ' +
     'repeatCount="indefinite"/></ellipse></svg>';
     // svg to icon
-    var icon = new H.map.Icon(svgMarkup),
+    var icon = new H.map.DomIcon(animatedSvg),
     coords = {lat: 52.53075, lng: 13.3851},
-    marker = new H.map.Marker(coords, {icon: icon});
+    marker = new H.map.DomMarker(coords, {icon: icon});
     // add object to map
-    map.addObject(marker);
     map.setCenter(coords);
     map.setZoom(18);
     map.addObject(marker);
