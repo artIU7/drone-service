@@ -27,7 +27,12 @@ public func configure(
     }
     
     let postgreSQL = PostgreSQLDatabase(config: postgreSQLConfig)
-
+    // middlewares
+    var middlewares = MiddlewareConfig()
+    middlewares.use(ErrorMiddleware.self)
+    middlewares.use(FileMiddleware.self)
+    // etc.
+    services.register(middlewares)
     // Register the configured PostreSQL database to the database config.
     var databases = DatabasesConfig()
     databases.add(database: postgreSQL, as: .psql)
