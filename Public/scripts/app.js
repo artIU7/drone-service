@@ -7,7 +7,7 @@ let user = {
     positionID: 1
   };
   
-  let response = await fetch('https://droneservice.herokuapp.com/users/', {
+  let response =  fetch('https://droneservice.herokuapp.com/users/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
@@ -15,6 +15,6 @@ let user = {
     body: JSON.stringify(user)
   });
   
-  let result = await response.json();
+  let result =  response.json();
   alert(result.message);
   console.log(JSON.parse(JSON.stringify(user)));
