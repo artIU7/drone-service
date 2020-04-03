@@ -30,5 +30,7 @@
             </p>
         }
     <script src="/scripts/app.js"></script>    
+    <div style="width: 640px; height: 480px" id="mapContainer"></div>
+
     </body>
 </html>
