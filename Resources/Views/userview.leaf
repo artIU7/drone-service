@@ -89,19 +89,12 @@
     'repeatCount="indefinite"/></ellipse></svg>'
     // svg to icon
     var icon = new H.map.DomIcon(svgMarkup),
-    coords = {lat: 52.53075, lng: 13.3851},
+    coords = {lat: 55.791105, lng: 38.438457},
     marker = new H.map.DomMarker(coords, {icon: icon});
     // add object to map
     map.setCenter(coords);
     map.setZoom(18);
     map.addObject(marker);
-    // add notification
-    // Create an info bubble object at a specific geographic location:
-    var bubble = new H.ui.InfoBubble(coords, {
-                content: '<b>Hello World!</b>'
-             });
-    // Add info bubble to the UI:
-    ui.addBubble(bubble);
     </script>
     </body>
 </html>
