@@ -42,6 +42,7 @@
       var platform = new H.service.Platform({
         'apikey': 'N7iCbCJNSvMSjds6CWKcYAXCwz8W8z_JB5qdFCNKW30'
       });
+    <input type="button" onclick="postDB()" value="Post">
 
       // Obtain the default map types from the platform object
       var maptypes = platform.createDefaultLayers();
