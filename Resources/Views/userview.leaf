@@ -11,7 +11,10 @@
             type="text/javascript" charset="utf-8"></script>
         <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"
             type="text/javascript" charset="utf-8"></script>
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"
+            type="text/javascript" charset="utf-8"></script>
+        <link rel="stylesheet" type="text/css"
+            href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
     </head>
     <body class="container">
         <h1 class="mt-3"> Dashboard service from brazil@ #(user.last.username) </h1>
@@ -67,16 +70,32 @@
     // Instantiate the default behavior, providing the mapEvents object:
     var behavior = new H.mapevents.Behavior(mapEvents);
     //  Add Marker
-    var svgMarkupPosition = '<svg width="24" height="24" ' +
-    'xmlns="http://www.w3.org/2000/svg">' +
-    '<rect stroke="white" fill="#1b468d" x="1" y="1" width="22" ' +
-    'height="22" /><text x="12" y="18" font-size="12pt" ' +
-    'font-family="Arial" font-weight="bold" text-anchor="middle" ' +
-    'fill="white">H</text></svg>';
+    var svgMarkupPosition = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" ' + 
+    'y="0px" style="margin:-112px 0 0 -32px" width="136px"' + 
+    'height="150px" viewBox="0 0 136 150"><ellipse fill="#000" ' +
+    'cx="32" cy="128" rx="36" ry="4"><animate attributeName="cx" ' + 
+    'from="32" to="32" begin="0s" dur="1.5s" values="96;32;96" ' + 
+    'keySplines=".6 .1 .8 .1; .1 .8 .1 1" keyTimes="0;0.4;1"' + 
+    'calcMode="spline" repeatCount="indefinite"/>' +    
+    '<animate attributeName="rx" from="36" to="36" begin="0s"' +
+    'dur="1.5s" values="36;10;36" keySplines=".6 .0 .8 .0; .0 .8 .0 1"' + 
+    'keyTimes="0;0.4;1" calcMode="spline" repeatCount="indefinite"/>' +
+    '<animate attributeName="opacity" from=".2" to=".2"  begin="0s" ' +
+    ' dur="1.5s" values=".1;.7;.1" keySplines=" .6.0 .8 .0; .0 .8 .0 1" ' +
+    'keyTimes=" 0;0.4;1" calcMode="spline" ' +
+    'repeatCount="indefinite"/></ellipse><ellipse fill="#1b468d" ' +
+    'cx="26" cy="20" rx="16" ry="12"><animate attributeName="cy" ' +
+    'from="20" to="20" begin="0s" dur="1.5s" values="20;112;20" ' +
+    'keySplines=".6 .1 .8 .1; .1 .8 .1 1" keyTimes=" 0;0.4;1" ' +
+    'calcMode="spline" repeatCount="indefinite"/> ' +
+    '<animate attributeName="ry" from="16" to="16" begin="0s" ' + 
+    'dur="1.5s" values="16;12;16" keySplines=".6 .0 .8 .0; .0 .8 .0 1" ' +
+    'keyTimes="0;0.4;1" calcMode="spline" ' +
+    'repeatCount="indefinite"/></ellipse></svg>'
     // svg to icon
     var icon = new H.map.Icon(svgMarkupPosition),
     coords = {lat: 55.791105, lng: 38.438457},
-    marker = new H.map.Marker(coords, {icon: icon});
+    marker = new H.map.DomMarker(coords, {icon: icon});
     // add object to map
     map.addObject(marker);
     map.setCenter(coords);
