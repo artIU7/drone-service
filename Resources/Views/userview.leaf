@@ -30,7 +30,7 @@
             </p>
         }
     <script src="/scripts/app.js"></script>    
-    <div style="width: 200px; height: 300px" id="mapContainer"></div>
+    <div style="width: 400px; height: 300px" id="mapContainer"></div>
     <script id="example-code" data-categories="geoshape" type="text/javascript" >
      // Initialize the platform object:
       var platform = new H.service.Platform({
@@ -46,7 +46,7 @@
         maptypes.vector.normal.map,
         {
           zoom: 10,
-          center: { lng: 13.4, lat: 52.51 }
+          center: { lng: 38.438457, lat: 55.791105 }
         });
     </script>
     </body>
