@@ -64,8 +64,7 @@
     map.addEventListener('tap', function(evt) {
     // Log 'tap' and 'mouse' events:
     console.log(evt.type, evt.currentPointer.type);
-    console.log(userlist.last.username);
-    console.log(locations)
+    console.log(#(userlist.last.username));
     });
 
     // Instantiate the default behavior, providing the mapEvents object:
@@ -94,7 +93,7 @@
     'keyTimes="0;0.4;1" calcMode="spline" ' +
     'repeatCount="indefinite"/></ellipse></svg>';
     // svg to icon
-    var icon = new H.map.Icon(svgMarkupPosition),
+    var icon = new H.map.DomIcon(svgMarkupPosition),
     coords = {lat: 55.791105, lng: 38.438457},
     marker = new H.map.DomMarker(coords, {icon: icon});
     // add object to map
