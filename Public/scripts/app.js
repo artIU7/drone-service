@@ -33,6 +33,7 @@ async function getLocation() {
     let posLoc = locationBrazil[last_i - 1]
     console.log(locationBrazil[last_i - 1]);
     localBra = {lat:posLoc.lat, lng:posLoc.lon}
+    console.log(localBra);
 }
 //
 

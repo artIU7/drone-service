@@ -34,7 +34,7 @@
     <input type="button" onclick="getDB()" value="Get"/>
     <input type="button" onclick="drawCircle()" value="DrawCircle"/>
     <input type="button" onclick="drawLineFull()" value="DrawLine"/>
-    <input type="button" onclick="getLocation()" value="Whe brazil@!!!"/>
+    <input type="button" onclick="timerFetchData()" value="Here brazil@!!!"/>
 
      <!-- #for(user in userlist) {
             <p class="mb-0">
@@ -89,8 +89,9 @@
     ));
   }
   function drawPositionMy() {
-      
-      addCircleToMap(map,localBra,30);
+      getLocation();
+      addCircleToMap(map,localBra,50);
+      localBra = {};
   }
   function addPolylineToMap(map,arrayPoly) {
     var lineString = new H.geo.LineString();
@@ -105,7 +106,9 @@
 function drawLineFull() {
     addPolylineToMap(map,arrayPos)
 }
+function timerFetchData() {
     setTimeout(drawPositionMy, 10000);
+}
     // Add event listeners:
     map.addEventListener('tap', function(evt) {
     // Log 'tap' and 'mouse' events:
