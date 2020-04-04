@@ -100,4 +100,10 @@ final class CoordinateController {
             return coordinate.save(on: req)
         }
     }
+    // delete a location
+    func delete(_ req: Request) throws -> Future<HTTPStatus> {
+        return try req.parameters.next(Coordinate.self).flatMap { coordinate in
+            return coordinate.delete(on: req)
+        }.transform(to: .ok)
+    }
 }
