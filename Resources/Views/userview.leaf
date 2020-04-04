@@ -109,11 +109,10 @@ function drawLineFull() {
     addPolylineToMap(map,arrayPos)
 }
 function timerFetchData() {
-    let timerId = setTimeout(function drawPositionMy() {
-    getLocation();
-    console.log("cicle");
+    let timerId = setTimeout(function getLocation();() {
     drawPositionMy()
-    timerId = setTimeout(drawPositionMy, 2000); // (*)
+    console.log("cicle");
+    timerId = setTimeout(getLocation, 2000); // (*)
     }, 3000);
 }
     // Add event listeners:
