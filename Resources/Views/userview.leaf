@@ -90,7 +90,7 @@
   }
   function drawPositionMy() {
       getLocation();
-      if localBra === 'undefined' {
+      if typeof localBra === 'undefined' {
       addCircleToMap(map,localBra,50);
       localBra = {};
       }
