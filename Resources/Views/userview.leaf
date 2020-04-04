@@ -111,7 +111,7 @@ function drawLineFull() {
 function timerFetchData() {
     let timerId = setTimeout(function drawPositionMy() {
     getLocation();
-    timerId = setTimeout(drawPositionMy, 2000); // (*)
+    timerId = setTimeout(drawPositionMy, 4000); // (*)
     }, 2000);
 }
     // Add event listeners:
