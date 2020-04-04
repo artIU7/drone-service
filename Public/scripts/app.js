@@ -1,5 +1,4 @@
-alert("Hello, alert!");
-
+var localBra = {};
 async function postDB() {
     let user = {
         altitude: 43,
@@ -31,7 +30,9 @@ async function getLocation() {
     let response = await fetch(url);
     let locationBrazil = await response.json(); // читаем ответ в формате JSON
     let last_i = locationBrazil.length;
+    let posLoc = locationBrazil[last_i - 1]
     console.log(locationBrazil[last_i - 1]);
+    localBra = {lat:posLoc.lat, lng:posLoc.lon}
 }
 //
 
