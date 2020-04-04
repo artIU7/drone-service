@@ -106,4 +106,16 @@ final class CoordinateController {
             return coordinate.delete(on: req)
         }.transform(to: .ok)
     }
+    // update
+    // update a user
+    func update(_ req: Request) throws -> Future<Coordinate> {
+        return try req.parameters.next(Coordinate.self).flatMap { coordinate in
+            return try req.content.decode(Coordinate.self).flatMap { position in
+                coordinate.lat = position.lat
+                coordinate.lon = position.lon
+                return coordinate.save(on: req)
+            }
+        }
+    }
+
 }

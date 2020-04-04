@@ -17,5 +17,6 @@ public func routes(_ router: Router) throws {
     router.get("location", use: coordinateController.list)
     router.get("tracking", use: coordinateController.last)
     router.post("location", use: coordinateController.create)
-    router.delete("tracking", use: coordinateController.delete)
+    router.delete("tracking",Coordinate.parameter ,use: coordinateController.delete)
+    router.delete("tracking",Coordinate.parameter ,use: coordinateController.update)
 }

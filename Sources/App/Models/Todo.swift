@@ -49,7 +49,7 @@ final class User: PostgreSQLModel {
 final class Coordinate: PostgreSQLModel {
     var id: Int?
     
-    let lon, lat: Double
+    var lon, lat: Double
 
     init(lon: Double, lat: Double) {
         self.lon = lon
