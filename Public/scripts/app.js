@@ -26,7 +26,7 @@ async function getDB() {
     alert(commits[0].username);
 }
 //
-function addCircleToMap(coord){
+function addCircleToMap(map,coord){
     map.addObject(new H.map.Circle(
       // The central point of the circle
       coord,
@@ -52,7 +52,8 @@ function addCircleToMap(coord){
  
     // read the properties associated with the map feature that triggered the event
     let props = evt.target.getData().properties;
+    drawCircle(position);
   }
-  function drawCircle() {
-    addCircleToMap(position)
+  function drawCircle(position) {
+    addCircleToMap(position);
 }
