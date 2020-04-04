@@ -109,8 +109,10 @@ function drawLineFull() {
     addPolylineToMap(map,arrayPos)
 }
 function timerFetchData() {
-    setTimeout(() => drawPositionMy());
-   getLocation()
+    let timerId = setTimeout(function drawPositionMy() {
+    getLocation();
+    timerId = setTimeout(drawPositionMy, 2000); // (*)
+    }, 2000);
 }
     // Add event listeners:
     map.addEventListener('tap', function(evt) {
