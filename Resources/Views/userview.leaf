@@ -109,8 +109,8 @@ function drawLineFull() {
     addPolylineToMap(map,arrayPos)
 }
 function timerFetchData() {
-    let timerId = setTimeout(function getLocation();() {
-    drawPositionMy()
+    let timerId = setTimeout(function getLocation()  {
+    drawPositionMy();
     console.log("cicle");
     timerId = setTimeout(getLocation, 2000); // (*)
     }, 3000);
