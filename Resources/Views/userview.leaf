@@ -90,9 +90,11 @@
   }
   function drawPositionMy() {
       getLocation();
-      if typeof localBra === 'undefined' {
-      addCircleToMap(map,localBra,50);
-      localBra = {};
+      if localBra === null {
+     
+      } else {
+        addCircleToMap(map,localBra,50);
+        localBra = {};
       }
   }
   function addPolylineToMap(map,arrayPoly) {
