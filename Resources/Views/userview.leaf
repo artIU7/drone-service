@@ -90,10 +90,10 @@
   }
   function drawPositionMy() {
       getLocation();
+      console.log("logo:");
       console.log(localBra);
- 
-        addCircleToMap(map,localBra,50);
-        localBra = {};
+      addCircleToMap(map,localBra,50);
+      localBra = {};
  
   }
   function addPolylineToMap(map,arrayPoly) {
