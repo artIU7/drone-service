@@ -87,11 +87,12 @@ final class UserController {
 final class CoordinateController {
     // view with users
     func list(_ req: Request) throws -> Future<[Coordinate]> {
-        return Coordinate.query(on: req).all()
+        return Coordinate.query(on: req).all() //not last
     }
     //
-    func last(_ req: Request) throws -> Future<[Coordinate]> {
-        return Coordinate.query(on: req).all()
+    func last(_ req: Request) throws -> Future<Coordinate> {
+        return Coordinate.query(on: req).first().unwrap(or: Abort(HTTPResponseStatus(statusCode: 404)))
+
     }
     // create a new user
     func create(_ req: Request) throws -> Future<Coordinate> {
