@@ -18,3 +18,10 @@ async function postDB() {
       let result =  await response.json();
     alert(result.message);
 }
+//
+async function getDB() {
+    let url = 'https://droneservice.herokuapp.com/users/';
+    let response = await fetch(url);
+    let commits = await response.json(); // читаем ответ в формате JSON
+    alert(commits[0].username);
+}

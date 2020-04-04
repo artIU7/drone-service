@@ -30,6 +30,7 @@
             </div>
         </form>
     <input type="button" onclick="postDB()" value="Post"/>
+    <input type="button" onclick="getDB()" value="Get"/>
      <!-- #for(user in userlist) {
             <p class="mb-0">
                 #(user.altitude)
