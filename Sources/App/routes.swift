@@ -15,5 +15,6 @@ public func routes(_ router: Router) throws {
     //
     let coordinateController = CoordinateController()
     router.get("location", use: coordinateController.list)
+    router.get("tracking", use: coordinateController.last)
     router.post("location", use: coordinateController.create)
 }

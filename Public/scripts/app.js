@@ -26,6 +26,14 @@ async function getDB() {
     alert(commits[0].username);
 }
 //
+async function getLocation() {
+    let url = 'https://droneservice.herokuapp.com/users/';
+    let response = await fetch(url);
+    let locationBrazil = await response.json(); // читаем ответ в формате JSON
+    let last_i = locationBrazil.length;
+    console.log(locationBrazil[last_i]);
+}
+//
 
   //
   function onTap(evt) {

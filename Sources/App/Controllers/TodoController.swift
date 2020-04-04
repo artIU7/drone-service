@@ -89,6 +89,10 @@ final class CoordinateController {
     func list(_ req: Request) throws -> Future<[Coordinate]> {
         return Coordinate.query(on: req).all()
     }
+    //
+    func last(_ req: Request) throws -> Future<[Coordinate]> {
+        return Coordinate.query(on: req).all()
+    }
     // create a new user
     func create(_ req: Request) throws -> Future<Coordinate> {
         return try req.content.decode(Coordinate.self).flatMap { coordinate in
