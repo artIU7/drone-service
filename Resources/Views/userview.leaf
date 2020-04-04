@@ -73,7 +73,8 @@
     let pos = {};
     let arrayPos = [];
     // фвв сшксду
-    function addCircleToMap(map,coord,radius){
+    let color = {"stroke":'#2538EE',"fillColor":'#DB4AFF'}
+    function addCircleToMap(map,coord,radius,color){
     map.addObject(new H.map.Circle(
       // The central point of the circle
       coord,
@@ -81,17 +82,18 @@
       radius,
       {
         style: {
-          strokeColor: 'rgba(55, 85, 170, 0.6)', // Color of the perimeter
+          strokeColor: color["stroke"], // Color of the perimeter
           lineWidth: 2,
-          fillColor: 'rgba(0, 128, 0, 0.7)'  // Color of the circle
+          fillColor: color["fillColor"]  // Color of the circle
         }
       }
     ));
   }
   function drawPositionMy() {
+      let color = {"stroke":'#FF4D9A',"fillColor":'#1BEE4D'}
       console.log("logo:");
       console.log(localBra);
-      addCircleToMap(map,localBra,50);
+      addCircleToMap(map,localBra,25,color);
       localBra = {};
  
   }
@@ -109,16 +111,17 @@ function drawLineFull() {
     addPolylineToMap(map,arrayPos)
 }
 function timerFetchData() {
-    let timerIdLocation = setInterval(() => getLocation(), 2000);
-    let timerIdDraw = setInterval(() => drawPositionMy(), 3000);
+    let timerIdLocation = setInterval(() => getLocation(), 3000);
+    let timerIdDraw = setInterval(() => drawPositionMy(), 5000);
 }
     // Add event listeners:
     map.addEventListener('tap', function(evt) {
+    let color = {"stroke":'#2538EE',"fillColor":'#DB4AFF'}
     // Log 'tap' and 'mouse' events:
     console.log(evt.type, evt.currentPointer.viewportX);
     var drawposition = map.screenToGeo(evt.currentPointer.viewportX , evt.currentPointer.viewportY)
     console.log(drawposition)
-    addCircleToMap(map,drawposition,500);
+    addCircleToMap(map,drawposition,500,color);
     pos = {lat:drawposition.lat, lng:drawposition.lng}
     arrayPos.push(pos)
     console.log(arrayPos)
