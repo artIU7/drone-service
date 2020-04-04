@@ -109,11 +109,8 @@ function drawLineFull() {
     addPolylineToMap(map,arrayPos)
 }
 function timerFetchData() {
-    let timerId = setTimeout(function getLocation()  {
-    drawPositionMy();
-    console.log("cicle");
-    timerId = setTimeout(getLocation, 2000); // (*)
-    }, 3000);
+    let timerIdLocation = setInterval(() => getLocation(), 2000);
+    let timerIdDraw = setInterval(() => drawPositionMy(), 3000);
 }
     // Add event listeners:
     map.addEventListener('tap', function(evt) {
