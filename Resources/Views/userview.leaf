@@ -14,6 +14,7 @@
             type="text/javascript" charset="utf-8"></script>
         <link rel="stylesheet" type="text/css"
             href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+        <script src="/scripts/app.js"></script>  
     </head>
     <body class="container">
         <h1 class="mt-3"> Dashboard service from brazil@ #(user.last.username) </h1>
@@ -36,8 +37,7 @@
                 #(user.altitude)
                 #(user.username)
             </p>
-        } --> 
-    <script src="/scripts/app.js"></script>    
+        } -->   
     <div style="width: 1100px; height: 600px" id="mapContainer"></div>
     <script id="example-code" data-categories="geoshape" type="text/javascript" >
      // Initialize the platform object:
@@ -60,6 +60,10 @@
         }); 
      // Create the default UI:
     var ui = H.ui.UI.createDefault(map, maptypes, 'ru-RU');
+    // povide for thme night
+    const provider = map.getBaseLayer().getProvider();
+    const style = new H.map.Style('./resources/night_theme.yaml');
+    provider.setStyle(style);
     // Enable the event system on the map instance:
     var mapEvents = new H.mapevents.MapEvents(map);
 
@@ -95,9 +99,9 @@
     'keyTimes="0;0.4;1" calcMode="spline" ' +
     'repeatCount="indefinite"/></ellipse></svg>';
     // svg to icon
-    var icon = new H.map.DomIcon(svgMarkupPosition),
+    var icon = new H.map.Icon(svgMarkupPosition),
     coords = {lat: 55.791105, lng: 38.438457},
-    marker = new H.map.DomMarker(coords, {icon: icon});
+    marker = new H.map.Marker(coords, {icon: icon});
     // add object to map
     map.addObject(marker);
     map.setCenter(coords);

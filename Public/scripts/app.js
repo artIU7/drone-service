@@ -16,7 +16,7 @@ async function postDB() {
      });
   
       let result =  await response.json();
-    alert(result.message);
+    alert(result.username);
 }
 //
 async function getDB() {
