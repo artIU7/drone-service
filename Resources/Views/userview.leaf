@@ -111,6 +111,7 @@ function drawLineFull() {
 function timerFetchData() {
     let timerId = setTimeout(function drawPositionMy() {
     getLocation();
+    console.log("cicle");
     timerId = setTimeout(drawPositionMy, 2000); // (*)
     }, 3000);
 }
