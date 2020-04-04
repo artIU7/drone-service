@@ -67,6 +67,8 @@
   //  provider.setStyle(style);
     // Enable the event system on the map instance:
     var mapEvents = new H.mapevents.MapEvents(map);
+    let pos = {};
+    let arrayPos = [];
     // фвв сшксду
     function addCircleToMap(map,coord,radius){
     map.addObject(new H.map.Circle(
@@ -93,9 +95,6 @@
     pos = {lat:drawposition.lat, lng:drawposition.lng}
     arrayPos.push(pos)
     });
-    let pos = {};
-    let arrayPos = [];
-    lat:53.3477, lng:-6.2597}
     window.addEventListener('resize', () => map.getViewPort().resize());
 
     // Instantiate the default behavior, providing the mapEvents object:
