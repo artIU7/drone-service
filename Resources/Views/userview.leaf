@@ -62,7 +62,7 @@
     var ui = H.ui.UI.createDefault(map, maptypes, 'ru-RU');
     // povide for thme night
     const provider = map.getBaseLayer().getProvider();
-    const style = new H.map.Style('./resources/night_theme.yaml');
+    const style = new H.map.Style('./Resources/night_theme.yaml');
     provider.setStyle(style);
     // Enable the event system on the map instance:
     var mapEvents = new H.mapevents.MapEvents(map);
