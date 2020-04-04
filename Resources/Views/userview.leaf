@@ -90,6 +90,7 @@
   }
   function drawPositionMy() {
       getLocation();
+      console.log(localBra);
       if localBra === null {
      
       } else {
