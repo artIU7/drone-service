@@ -93,7 +93,7 @@
       let color = {"stroke":'#FF4D9A',"fillColor":'#1BEE4D'}
       console.log("logo:");
       console.log(localBra);
-      addCircleToMap(map,localBra,25,color);
+      addCircleToMap(map,localBra,2.5,color);
       localBra = {};
  
   }
@@ -111,8 +111,8 @@ function drawLineFull() {
     addPolylineToMap(map,arrayPos)
 }
 function timerFetchData() {
-    let timerIdLocation = setInterval(() => getLocation(), 3000);
-    let timerIdDraw = setInterval(() => drawPositionMy(), 5000);
+    let timerIdLocation = setInterval(() => getLocation(), 5000);
+    let timerIdDraw = setInterval(() => drawPositionMy(), 8000);
 }
     // Add event listeners:
     map.addEventListener('tap', function(evt) {
