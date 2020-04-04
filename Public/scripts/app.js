@@ -48,14 +48,11 @@ function addCircleToMap(coord){
       evt.currentPointer.viewportX,
       evt.currentPointer.viewportY
     );
-    addCircleToMap(position)
+    
  
     // read the properties associated with the map feature that triggered the event
     let props = evt.target.getData().properties;
   }
   function drawCircle() {
-    let url = 'https://droneservice.herokuapp.com/users/';
-    let response = await fetch(url);
-    let commits = await response.json(); // читаем ответ в формате JSON
-    alert(commits[0].username);
+    addCircleToMap(position)
 }
