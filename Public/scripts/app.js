@@ -26,10 +26,10 @@ async function getDB() {
     alert(commits[0].username);
 }
 //
-function addCircleToMap(map){
+function addCircleToMap(coord){
     map.addObject(new H.map.Circle(
       // The central point of the circle
-      {lat:55.791105, lng:38.438457},
+      coord,
       // The radius of the circle in meters
       1000,
       {
@@ -48,8 +48,14 @@ function addCircleToMap(map){
       evt.currentPointer.viewportX,
       evt.currentPointer.viewportY
     );
+    addCircleToMap(position)
  
     // read the properties associated with the map feature that triggered the event
     let props = evt.target.getData().properties;
   }
-  
+  function drawCircle() {
+    let url = 'https://droneservice.herokuapp.com/users/';
+    let response = await fetch(url);
+    let commits = await response.json(); // читаем ответ в формате JSON
+    alert(commits[0].username);
+}
