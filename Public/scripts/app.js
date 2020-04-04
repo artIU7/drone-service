@@ -26,21 +26,7 @@ async function getDB() {
     alert(commits[0].username);
 }
 //
-function addCircleToMap(map,coord){
-    map.addObject(new H.map.Circle(
-      // The central point of the circle
-      coord,
-      // The radius of the circle in meters
-      1000,
-      {
-        style: {
-          strokeColor: 'rgba(55, 85, 170, 0.6)', // Color of the perimeter
-          lineWidth: 2,
-          fillColor: 'rgba(0, 128, 0, 0.7)'  // Color of the circle
-        }
-      }
-    ));
-  }
+
   //
   function onTap(evt) {
     // calculate infobubble position from the cursor screen coordinates

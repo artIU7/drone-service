@@ -67,12 +67,28 @@
   //  provider.setStyle(style);
     // Enable the event system on the map instance:
     var mapEvents = new H.mapevents.MapEvents(map);
-
+    // фвв сшксду
+    function addCircleToMap(map,coord,radius){
+    map.addObject(new H.map.Circle(
+      // The central point of the circle
+      coord,
+      // The radius of the circle in meters
+      radius,
+      {
+        style: {
+          strokeColor: 'rgba(55, 85, 170, 0.6)', // Color of the perimeter
+          lineWidth: 2,
+          fillColor: 'rgba(0, 128, 0, 0.7)'  // Color of the circle
+        }
+      }
+    ));
+  }
     // Add event listeners:
     map.addEventListener('tap', function(evt) {
     // Log 'tap' and 'mouse' events:
     console.log(evt.type, evt.currentPointer.viewportX);
-    //addCircleToMap(map,{evt.currentPointer.viewportX});
+    var drawposition = map.screenToGeo(pointer.viewportX , pointer.viewportY)
+    addCircleToMap(map,drawposition,500);
     });
     window.addEventListener('resize', () => map.getViewPort().resize());
 
