@@ -33,6 +33,7 @@
     <input type="button" onclick="postDB()" value="Post"/>
     <input type="button" onclick="getDB()" value="Get"/>
     <input type="button" onclick="drawCircle()" value="DrawCircle"/>
+    <input type="button" onclick="drawLineFull()" value="DrawLine"/>
      <!-- #for(user in userlist) {
             <p class="mb-0">
                 #(user.altitude)
@@ -85,6 +86,20 @@
       }
     ));
   }
+  function addPolylineToMap(map,arrayPoly) {
+    var lineString = new H.geo.LineString();
+    for (let p of arrayPoly) {
+         lineString.pushPoint(p);
+    }
+    map.addObject(new H.map.Polyline(
+        lineString, { style: { strokeColor : '#F24545',
+                             lineWidth: 4 }}
+    ));
+}
+function drawLineFull() {
+    addPolylineToMap(map,arrayPos)
+    
+}
     // Add event listeners:
     map.addEventListener('tap', function(evt) {
     // Log 'tap' and 'mouse' events:
@@ -94,7 +109,9 @@
     addCircleToMap(map,drawposition,500);
     pos = {lat:drawposition.lat, lng:drawposition.lng}
     arrayPos.push(pos)
+    console.log(arrayPos)
     });
+
     window.addEventListener('resize', () => map.getViewPort().resize());
 
     // Instantiate the default behavior, providing the mapEvents object:
