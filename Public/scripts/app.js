@@ -27,11 +27,11 @@ async function getDB() {
 }
 //
 async function getLocation() {
-    let url = 'https://droneservice.herokuapp.com/users/';
+    let url = 'https://droneservice.herokuapp.com/tracking/';
     let response = await fetch(url);
     let locationBrazil = await response.json(); // читаем ответ в формате JSON
     let last_i = locationBrazil.length;
-    console.log(locationBrazil[last_i]);
+    console.log(locationBrazil[last_i - 1]);
 }
 //
 
