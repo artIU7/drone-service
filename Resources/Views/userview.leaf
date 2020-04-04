@@ -90,8 +90,10 @@
   }
   function drawPositionMy() {
       getLocation();
+      if localBra != undefined {
       addCircleToMap(map,localBra,50);
       localBra = {};
+      }
   }
   function addPolylineToMap(map,arrayPoly) {
     var lineString = new H.geo.LineString();
