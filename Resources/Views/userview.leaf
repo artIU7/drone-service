@@ -32,6 +32,7 @@
         </form>
     <input type="button" onclick="postDB()" value="Post"/>
     <input type="button" onclick="getDB()" value="Get"/>
+    <input type="button" onclick="drawCircle()" value="DrawCircle"/>
      <!-- #for(user in userlist) {
             <p class="mb-0">
                 #(user.altitude)
@@ -49,7 +50,20 @@
       // Obtain the default map types from the platform object
       var maptypes = platform.createDefaultLayers();
 
+      var changeListener = (evt) => {
+      if (style.getState() === H.map.Style.State.READY) {
+      style.removeEventListener('change', changeListener);
 
+      // enable interactions for the desired map features
+      style.setInteractive(['places', 'places.populated-places'], true);
+
+      // add an event listener that is responsible for catching the
+      // 'tap' event on the feature and showing the infobubble
+      provider.addEventListener('tap', onTap);
+       }
+     };
+     style.addEventListener('change', changeListener);
+        }
       // Instantiate (and display) a map object:
       var map = new H.Map(
         document.getElementById('mapContainer'),
@@ -62,7 +76,7 @@
     var ui = H.ui.UI.createDefault(map, maptypes, 'ru-RU');
     // povide for thme night
     const provider = map.getBaseLayer().getProvider();
-    const style = new H.map.Style('./Resources/night_theme.yaml');
+    const style = new H.map.Style('/styles/night_theme.yaml');
     provider.setStyle(style);
     // Enable the event system on the map instance:
     var mapEvents = new H.mapevents.MapEvents(map);
