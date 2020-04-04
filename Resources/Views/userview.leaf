@@ -121,7 +121,7 @@ function timerFetchData() {
     console.log(evt.type, evt.currentPointer.viewportX);
     var drawposition = map.screenToGeo(evt.currentPointer.viewportX , evt.currentPointer.viewportY)
     console.log(drawposition)
-    addCircleToMap(map,drawposition,500,color);
+    addCircleToMap(map,drawposition,2.5,color);
     pos = {lat:drawposition.lat, lng:drawposition.lng}
     arrayPos.push(pos)
     console.log(arrayPos)

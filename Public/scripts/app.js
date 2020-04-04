@@ -29,10 +29,10 @@ async function getLocation() {
     let url = 'https://droneservice.herokuapp.com/tracking/';
     let response = await fetch(url);
     let locationBrazil = await response.json(); // читаем ответ в формате JSON
-    let last_i = locationBrazil.length;
-    let posLoc = locationBrazil[last_i - 1]
-    console.log(locationBrazil[last_i - 1]);
-    localBra = {lat:posLoc.lat, lng:posLoc.lon}
+    //let last_i = locationBrazil.length;
+    //let posLoc = locationBrazil[last_i - 1]
+    //console.log(locationBrazil[last_i - 1]);
+    localBra = {lat:locationBrazil.lat, lng:locationBrazil.lon}
     console.log(localBra);
 }
 //
