@@ -96,7 +96,10 @@
   }
   // add Polygon
   function addPolygonToMap(map,arrayPolyPoint) {
-    var lineString = arrayPolyPoint
+    var lineString = new H.geo.LineString();
+    for (let p of arrayPolyPoint) {
+         lineString.pushPoint(p);
+    }
     //new H.geo.LineString(
     //  [52, 13, 100, 48, 2, 100, 48, 16, 100, 52, 13, 100],
     // 'values lat lng alt'
