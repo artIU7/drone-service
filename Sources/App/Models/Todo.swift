@@ -1,10 +1,7 @@
 import FluentPostgreSQL
 import Vapor
 
-final class area : Codable{
-    var lat : Double
-    var lot : Double
-}
+
 final class User: PostgreSQLModel {
     var id: Int?
  //   var username: String
@@ -27,6 +24,10 @@ final class User: PostgreSQLModel {
  //   struct Coordinate {
  //       let lon, lat: String
  //   }
+}
+struct area : Codable{
+    var lat : Double
+    var lot : Double
 }
 /*
    func create(_ req: Request) throws -> Future<Response> {
