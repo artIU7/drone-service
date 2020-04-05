@@ -20,7 +20,7 @@
 		</dict>
 	</array>
 	<key>httpMethod</key>
-	<string>GET</string>
+	<string>POST</string>
 	<key>jsonpScript</key>
 	<string></string>
 	<key>paramBodyUIChoice</key>
@@ -29,7 +29,7 @@
 	<array>
 		<dict>
 			<key>inUse</key>
-			<false/>
+			<true/>
 			<key>parameter</key>
 			<string>username</string>
 			<key>value</key>
@@ -41,7 +41,7 @@
 			<key>parameter</key>
 			<string>lon</string>
 			<key>value</key>
-			<string>45</string>
+			<string>38,43893362906784</string>
 		</dict>
 		<dict>
 			<key>inUse</key>
@@ -49,7 +49,7 @@
 			<key>parameter</key>
 			<string>lat</string>
 			<key>value</key>
-			<string>39</string>
+			<string>55,790158899122964</string>
 		</dict>
 		<dict>
 			<key>inUse</key>
@@ -61,11 +61,19 @@
 		</dict>
 		<dict>
 			<key>inUse</key>
-			<false/>
+			<true/>
 			<key>parameter</key>
 			<string>altitude</string>
 			<key>value</key>
-			<string>45</string>
+			<string>300</string>
+		</dict>
+		<dict>
+			<key>inUse</key>
+			<true/>
+			<key>parameter</key>
+			<string>locate</string>
+			<key>value</key>
+			<string>[{"lat":43.4,"lot":34.3},{"lat":43.4,"lot":34.3}]</string>
 		</dict>
 		<dict>
 			<key>inUse</key>
@@ -73,13 +81,21 @@
 			<key>parameter</key>
 			<string>username</string>
 			<key>value</key>
-			<string>valet</string>
+			<string>Vasek</string>
+		</dict>
+		<dict>
+			<key>inUse</key>
+			<true/>
+			<key>parameter</key>
+			<string>positionID</string>
+			<key>value</key>
+			<string>1</string>
 		</dict>
 		<dict>
 			<key>inUse</key>
 			<false/>
 			<key>parameter</key>
-			<string>position</string>
+			<string>id</string>
 			<key>value</key>
 			<string>1</string>
 		</dict>
