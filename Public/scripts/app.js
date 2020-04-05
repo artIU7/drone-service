@@ -3,7 +3,8 @@ async function postDB() {
     let user = {
         altitude: 43,
         username: 'Smith',
-        positionID: 1
+        positionID: 1,
+        locate : [{"lat":43.4,"lot":34.3},{"lat":43.4,"lot":34.3}]
     };
   
       let response =  await fetch('https://droneservice.herokuapp.com/users/', {
