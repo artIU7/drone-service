@@ -1,21 +1,27 @@
 import FluentPostgreSQL
 import Vapor
 
-
+struct area : Codable{
+    var lat : Double
+    var lot : Double
+}
 final class User: PostgreSQLModel {
     var id: Int?
  //   var username: String
     var altitude : Double
     var username : String
     var positionID : Coordinate.ID
+    var locate : [area]
+    
    // var mycoordinate : Coordinate
 
-    init(id: Int? = nil, /*username: String*/altitude : Double,username: String/*,mycoordinate : Coordinate */,positionID : Coordinate.ID) {
+    init(id: Int? = nil, /*username: String*/altitude : Double,username: String/*,mycoordinate : Coordinate */,positionID : Coordinate.ID,locate : [area]) {
         self.id = id
    //     self.username = username
         self.altitude = altitude
         self.username = username
         self.positionID = positionID
+        self.locate = locate
         //self.mycoordinate = mycoordinate
     }
  //   struct Coordinate {
