@@ -75,6 +75,7 @@
     var mapEvents = new H.mapevents.MapEvents(map);
     let pos = {};
     let arrayPos = [];
+    let arrayPolyPoint = [];
     // фвв сшксду
     let color = {"stroke":'#2538EE',"fillColor":'#DB4AFF'}
     // add Circle 
@@ -94,11 +95,12 @@
     ));
   }
   // add Polygon
-  function addPolygonToMap(map) {
-    var lineString = new H.geo.LineString(
-      [52, 13, 100, 48, 2, 100, 48, 16, 100, 52, 13, 100],
-     'values lat lng alt'
-    );
+  function addPolygonToMap(map,arrayPolyPoint) {
+    var lineString = arrayPolyPoint
+    //new H.geo.LineString(
+    //  [52, 13, 100, 48, 2, 100, 48, 16, 100, 52, 13, 100],
+    // 'values lat lng alt'
+    //);
     map.addObject(
       new H.map.Polygon(lineString, {
         style: {
@@ -111,7 +113,7 @@
 }
   //
   function showPoly() {
-      addPolygonToMap(map);
+      addPolygonToMap(map,arrayPolyPoint);
   }
   function drawPositionMy() {
       let color = {"stroke":'#FF4D9A',"fillColor":'#1BEE4D'}
@@ -147,8 +149,11 @@ function timerFetchData() {
     console.log(drawposition)
     addCircleToMap(map,drawposition,2.5,color);
     pos = {lat:drawposition.lat, lng:drawposition.lng}
+    posV = {lat:drawposition.lat, lng:drawposition.lng, alt:40}
     arrayPos.push(pos)
+    arrayPolyPoint.push(posV)
     console.log(arrayPos)
+    console.log(arrayPolyPoint)
     });
 
     window.addEventListener('resize', () => map.getViewPort().resize());
