@@ -30,12 +30,15 @@
                 </div>
             </div>
         </form>
+    <button id = "find-me">Show my location</button><br/>
+    <p id = "status"></p>
+    <a id = "map-link" target="_blank"></a> 
     <input type="button" onclick="postDB()" value="Post"/>
     <input type="button" onclick="getDB()" value="Get"/>
-    <input type="button" onclick="drawCircle()" value="DrawCircle"/>
+    <input type="button" onclick="showPoly()" value="DrawCircle"/>
     <input type="button" onclick="drawLineFull()" value="DrawLine"/>
     <input type="button" onclick="timerFetchData()" value="Here brazil@!!!"/>
-
+  
      <!-- #for(user in userlist) {
             <p class="mb-0">
                 #(user.altitude)
@@ -74,6 +77,7 @@
     let arrayPos = [];
     // фвв сшксду
     let color = {"stroke":'#2538EE',"fillColor":'#DB4AFF'}
+    // add Circle 
     function addCircleToMap(map,coord,radius,color){
     map.addObject(new H.map.Circle(
       // The central point of the circle
@@ -88,6 +92,26 @@
         }
       }
     ));
+  }
+  // add Polygon
+  function addPolygonToMap(map) {
+    var lineString = new H.geo.LineString(
+      [52, 13, 100, 48, 2, 100, 48, 16, 100, 52, 13, 100],
+     'values lat lng alt'
+    );
+    map.addObject(
+      new H.map.Polygon(lineString, {
+        style: {
+          fillColor: '#FFFFCC',
+          strokeColor: '#829',
+          lineWidth: 8
+         }
+    })
+  );
+}
+  //
+  function showPoly() {
+      addPolygonToMap(map);
   }
   function drawPositionMy() {
       let color = {"stroke":'#FF4D9A',"fillColor":'#1BEE4D'}
