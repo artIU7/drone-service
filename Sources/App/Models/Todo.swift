@@ -1,7 +1,7 @@
 import FluentPostgreSQL
 import Vapor
 
-struct area : Codable{
+final class area : Codable{
     var lat : Double
     var lot : Double
 }
