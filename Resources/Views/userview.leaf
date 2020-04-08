@@ -97,7 +97,7 @@
   }
   // post AR object new 
   function addARSCene() {
-    postDB(postCoordinate);
+    postDB(arrayPost);
   }
   // add Polygon
   function addPolygonToMap(map,arrayPolyPoint) {
@@ -129,6 +129,7 @@
       console.log(localBra);
       addCircleToMap(map,positionMyLocation,2.5,color);
       localBra = {};
+      map.setCenter(positionMyLocation);
  
   }
   function addPolylineToMap(map,arrayPoly) {
@@ -170,6 +171,7 @@ function myLocate() {
     arrayPost.push(postCoordinate)
     console.log(arrayPos)
     console.log(arrayPolyPoint)
+    console.log(arrayPost)
     });
 
     window.addEventListener('resize', () => map.getViewPort().resize());
