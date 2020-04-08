@@ -7,6 +7,7 @@ async function postDB(locate) {
         positionID: 1,
         locate : locate/*[{"lat":43.4,"lot":34.3},{"lat":43.4,"lot":34.3}]*/
     };
+    console.log(locate);
   
       let response =  await fetch('https://droneservice.herokuapp.com/users/', {
         method: 'POST',
