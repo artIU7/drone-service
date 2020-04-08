@@ -32,7 +32,7 @@
         </form>
   
     <a id = "map-link" target="_blank"></a> 
-    <input type="button" onclick="postDB()" value="Post"/>
+    <input type="button" onclick="addARSCene()" value="Post"/>
     <input type="button" onclick="getDB()" value="Get"/>
     <input type="button" onclick="showPoly()" value="DrawCircle"/>
     <input type="button" onclick="drawLineFull()" value="DrawLine"/>
