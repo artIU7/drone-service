@@ -5,7 +5,7 @@ async function postDB(locate) {
         altitude: 1,
         username: 'ARSceneObject',
         positionID: 1,
-        locate : locate/*[{"lat":43.4,"lot":34.3},{"lat":43.4,"lot":34.3}]*/
+        locate : [{"lat":43.4,"lot":34.3},{"lat":43.4,"lot":34.3}]
     };
     console.log(locate);
   
