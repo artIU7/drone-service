@@ -129,7 +129,7 @@
       console.log(localBra);
       addCircleToMap(map,localBra,0.5,color);
       localBra = {};
-      map.setCenter(positionMyLocation);
+      map.setCenter(localBra);
  
   }
   function addPolylineToMap(map,arrayPoly) {
