@@ -44,6 +44,7 @@ async function getLocation() {
       const longitude = position.coords.longitude;
       const accuracy = position.coords.accuracy;
       positionMyLocation = {lat : latitude,lng : longitude}
+      console.log(positionMyLocation)
       mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
     }
     

@@ -150,6 +150,7 @@ function timerFetchData() {
 function myLocate() {
    let colorMyLocation= {"stroke":'#FF4D9A',"fillColor":'#1BEE4D'}
   getLocate();
+  console.log(positionMyLocation);
   addCircleToMap(map,positionMyLocation,0.5,colorMyLocation);
 }
     // Add event listeners:
