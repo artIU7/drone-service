@@ -1,10 +1,11 @@
 var localBra = {};
-async function postDB() {
+var positionMyLocation = {};
+async function postDB(locate) {
     let user = {
-        altitude: 43,
-        username: 'Smith',
+        altitude: 1,
+        username: 'ARSceneObject',
         positionID: 1,
-        locate : [{"lat":43.4,"lot":34.3},{"lat":43.4,"lot":34.3}]
+        locate : locate/*[{"lat":43.4,"lot":34.3},{"lat":43.4,"lot":34.3}]*/
     };
   
       let response =  await fetch('https://droneservice.herokuapp.com/users/', {
@@ -42,6 +43,7 @@ async function getLocation() {
       const latitude  = position.coords.latitude;
       const longitude = position.coords.longitude;
       const accuracy = position.coords.accuracy;
+      positionMyLocation = {lat : latitude,lng : longitude}
       mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
     }
     

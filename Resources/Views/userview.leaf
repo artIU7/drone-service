@@ -94,6 +94,10 @@
       }
     ));
   }
+  // post AR object new 
+  function addARSCene() {
+    postDB(postCoordinate);
+  }
   // add Polygon
   function addPolygonToMap(map,arrayPolyPoint) {
     var lineString = new H.geo.LineString();
@@ -145,7 +149,7 @@ function timerFetchData() {
 }
 function myLocate() {
   getLocate();
-
+  addCircleToMap(map,positionMyLocation,0.5,'#F24545');
 }
     // Add event listeners:
     map.addEventListener('tap', function(evt) {
@@ -157,8 +161,10 @@ function myLocate() {
     addCircleToMap(map,drawposition,2.5,color);
     pos = {lat:drawposition.lat, lng:drawposition.lng}
     posV = {lat:drawposition.lat, lng:drawposition.lng, alt:40}
+    postCoordinate = {lat:drawposition.lat, lot:drawposition.lng}
     arrayPos.push(pos)
     arrayPolyPoint.push(posV)
+    arrayPost.push(postCoordinate)
     console.log(arrayPos)
     console.log(arrayPolyPoint)
     });
