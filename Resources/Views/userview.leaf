@@ -76,6 +76,7 @@
     let pos = {};
     let arrayPos = [];
     let arrayPolyPoint = [];
+    let arrayPost = [];
     // фвв сшксду
     let color = {"stroke":'#2538EE',"fillColor":'#DB4AFF'}
     // add Circle 
