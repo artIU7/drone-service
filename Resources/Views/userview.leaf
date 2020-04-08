@@ -89,7 +89,7 @@
       {
         style: {
           strokeColor: color["stroke"], // Color of the perimeter
-          lineWidth: 2,
+          lineWidth: 1,
           fillColor: color["fillColor"]  // Color of the circle
         }
       }
@@ -112,9 +112,9 @@
     map.addObject(
       new H.map.Polygon(lineString, {
         style: {
-          fillColor: '#FFFFCC',
+          fillColor: '#D12B2B',
           strokeColor: '#829',
-          lineWidth: 8
+          lineWidth: 0.5
          }
     })
   );
@@ -124,10 +124,10 @@
       addPolygonToMap(map,arrayPolyPoint);
   }
   function drawPositionMy() {
-      let color = {"stroke":'#FF4D9A',"fillColor":'#1BEE4D'}
+      let color = {"stroke":'#540EF7',"fillColor":'#1BCDEE'}
       console.log("logo:");
       console.log(localBra);
-      addCircleToMap(map,positionMyLocation,2.5,color);
+      addCircleToMap(map,localBra,0.5,color);
       localBra = {};
       map.setCenter(positionMyLocation);
  
@@ -139,7 +139,7 @@
     }
     map.addObject(new H.map.Polyline(
         lineString, { style: { strokeColor : '#F24545',
-                             lineWidth: 4 }}
+                             lineWidth: 1 }}
     ));
 }
 function drawLineFull() {
@@ -162,7 +162,7 @@ function myLocate() {
     console.log(evt.type, evt.currentPointer.viewportX);
     var drawposition = map.screenToGeo(evt.currentPointer.viewportX , evt.currentPointer.viewportY)
     console.log(drawposition)
-    addCircleToMap(map,drawposition,2.5,color);
+    addCircleToMap(map,drawposition,1,color);
     pos = {lat:drawposition.lat, lng:drawposition.lng}
     posV = {lat:drawposition.lat, lng:drawposition.lng, alt:40}
     postCoordinate = {"lat":drawposition.lat, "lot":drawposition.lng}
