@@ -148,8 +148,9 @@ function timerFetchData() {
     let timerIdDraw = setInterval(() => drawPositionMy(), 8000);
 }
 function myLocate() {
+   let colorMyLocation= {"stroke":'#FF4D9A',"fillColor":'#1BEE4D'}
   getLocate();
-  addCircleToMap(map,positionMyLocation,0.5,'#F24545');
+  addCircleToMap(map,positionMyLocation,0.5,colorMyLocation);
 }
     // Add event listeners:
     map.addEventListener('tap', function(evt) {
